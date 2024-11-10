@@ -27,23 +27,11 @@ The `Visualise` class produces a Graphviz dot file from the NFA structure, displ
 ### 3. Python Script for Visualization
 A Python script reads the generated dot file and renders it as an image or PDF using Graphviz, enabling users to visually examine the NFA's structure and transitions.
 
-## Code Example
+## Usage
+1. Convert the Regular Expression: Use the PostfixToNFA class to transform the expression into an NFA.
+2. Visualize the NFA: The Visualise class generates a Graphviz dot file, and the Python script creates a visual representation for easy analysis.
 
-### Java Implementation
-Here's an example snippet of the `PostfixToNFA` class that performs the core logic:
-```java
-class State {
-    int id;
-    Map<Character, List<State>> transitions = new HashMap<>();
-
-    public State(int id) {
-        this.id = id;
-    }
-
-    public void addTransition(char symbol, State nextState) {
-        transitions.putIfAbsent(symbol, new ArrayList<>());
-        transitions.get(symbol).add(nextState);
-    }
-}
-
-// More code for defining NFA operations...
+## Output
+The project generates:
+1. A .dot file describing the NFA's structure.
+2. A graphical visualization in .png or .pdf format for easy examination of the automaton.
